@@ -7,10 +7,15 @@ import co.com.neoris.users.repositories.IClientRepository;
 import co.com.neoris.users.domain.gateway.IClientGateway;
 import co.com.neoris.users.domain.model.Client;
 
+import co.com.neoris.users.repositories.IPersonRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.time.OffsetDateTime;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +24,7 @@ public class ClientAdapter implements IClientGateway {
     Logger logger = LoggerFactory.getLogger(ClientAdapter.class);
 
     private final IClientRepository repository;
+    private final IPersonRepository personRepository;
     private final IClientConverter converter;
 
     @Override
@@ -48,6 +54,9 @@ public class ClientAdapter implements IClientGateway {
         logger.info("♠------- Create New Client --------♠");
         ClientEntity clientEntity = converter.fromModelToEntity(client);
         logger.info(clientEntity.toString());
+        OffsetDateTime now = OffsetDateTime.now();
+        clientEntity.setAudCreatedAt(now);
+        clientEntity.getPerson().setAudCreatedAt(now);
         repository.save(clientEntity);
     }
 
@@ -67,12 +76,18 @@ public class ClientAdapter implements IClientGateway {
     }
 
     @Override
+    @Transactional
     public void update(Client client, String idNumber) {
         logger.info("♠------- Create New Client --------♠");
-        ClientEntity clientEntity = converter
-                .fromModelToEntity(repository.findClientByPerson_IdNumber(idNumber).get(),
-                        client);
+        Optional<ClientEntity> optionalClientEntity = repository.findClientByPerson_IdNumber(idNumber);
 
+        ClientEntity clientEntity = converter
+                .fromModelToEntity(optionalClientEntity.get(), client);
+
+        OffsetDateTime now = OffsetDateTime.now();
+        clientEntity.setAudUpdatedAt(now);
+        clientEntity.getPerson().setAudUpdatedAt(now);
+        personRepository.save(clientEntity.getPerson());
         logger.info(clientEntity.toString());
         repository.save(clientEntity);
     }

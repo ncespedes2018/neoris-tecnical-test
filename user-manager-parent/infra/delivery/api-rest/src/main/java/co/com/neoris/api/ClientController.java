@@ -28,7 +28,7 @@ public class ClientController {
     public ResponseEntity<?> getClientsByFullName(@PathVariable String fullName) throws UserNotFoundException {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(useCase.getClientsByIdNumber(fullName));
+                .body(useCase.getClientByFullName(fullName));
     }
 
     @GetMapping("/id/{id}")

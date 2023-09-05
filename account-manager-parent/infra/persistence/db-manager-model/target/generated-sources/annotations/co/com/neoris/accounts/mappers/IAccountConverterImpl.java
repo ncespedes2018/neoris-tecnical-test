@@ -9,46 +9,43 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-05T13:13:40+0200",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.8 (OpenLogic)"
+    date = "2023-09-05T22:16:45+0200",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.7 (Oracle Corporation)"
 )
 @Component
 public class IAccountConverterImpl implements IAccountConverter {
 
     @Override
-    public Account fromEntityToModel(AccountEntity AccountEntity) {
-        if ( AccountEntity == null ) {
+    public Account fromEntityToModel(AccountEntity accountEntity) {
+        if ( accountEntity == null ) {
             return null;
         }
 
         AccountBuilder account = Account.builder();
 
-        if ( AccountEntity.getId() != null ) {
-            account.id( AccountEntity.getId() );
+        if ( accountEntity.getClientIdNumber() != null ) {
+            account.clientIdNumber( accountEntity.getClientIdNumber() );
         }
-        if ( AccountEntity.getClientIdNumber() != null ) {
-            account.clientIdNumber( AccountEntity.getClientIdNumber() );
+        if ( accountEntity.getPassword() != null ) {
+            account.password( accountEntity.getPassword() );
         }
-        if ( AccountEntity.getPassword() != null ) {
-            account.password( AccountEntity.getPassword() );
+        if ( accountEntity.getAccountNumber() != null ) {
+            account.accountNumber( accountEntity.getAccountNumber() );
         }
-        if ( AccountEntity.getAccountNumber() != null ) {
-            account.accountNumber( AccountEntity.getAccountNumber() );
+        if ( accountEntity.getAccountType() != null ) {
+            account.accountType( accountEntity.getAccountType() );
         }
-        if ( AccountEntity.getAccountType() != null ) {
-            account.accountType( AccountEntity.getAccountType() );
+        if ( accountEntity.getInitialBalance() != null ) {
+            account.initialBalance( accountEntity.getInitialBalance() );
         }
-        if ( AccountEntity.getInitialBalance() != null ) {
-            account.initialBalance( AccountEntity.getInitialBalance() );
+        if ( accountEntity.getStatus() != null ) {
+            account.status( accountEntity.getStatus() );
         }
-        if ( AccountEntity.getStatus() != null ) {
-            account.status( AccountEntity.getStatus() );
+        if ( accountEntity.getAudCreatedAt() != null ) {
+            account.audCreatedAt( accountEntity.getAudCreatedAt() );
         }
-        if ( AccountEntity.getAudCreatedAt() != null ) {
-            account.audCreatedAt( AccountEntity.getAudCreatedAt() );
-        }
-        if ( AccountEntity.getAudUpdatedAt() != null ) {
-            account.audUpdatedAt( AccountEntity.getAudUpdatedAt() );
+        if ( accountEntity.getAudUpdatedAt() != null ) {
+            account.audUpdatedAt( accountEntity.getAudUpdatedAt() );
         }
 
         return account.build();
@@ -62,9 +59,6 @@ public class IAccountConverterImpl implements IAccountConverter {
 
         AccountEntityBuilder accountEntity = AccountEntity.builder();
 
-        if ( account.getId() != null ) {
-            accountEntity.id( account.getId() );
-        }
         if ( account.getClientIdNumber() != null ) {
             accountEntity.clientIdNumber( account.getClientIdNumber() );
         }
@@ -99,9 +93,6 @@ public class IAccountConverterImpl implements IAccountConverter {
             return null;
         }
 
-        if ( account.getId() != null ) {
-            entity.setId( account.getId() );
-        }
         if ( account.getClientIdNumber() != null ) {
             entity.setClientIdNumber( account.getClientIdNumber() );
         }

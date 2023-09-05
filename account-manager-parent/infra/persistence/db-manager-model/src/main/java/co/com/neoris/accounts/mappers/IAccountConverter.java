@@ -10,7 +10,7 @@ public interface IAccountConverter {
 
     IAccountConverter INSTANCE = Mappers.getMapper(IAccountConverter.class);
 
-    co.com.neoris.accounts.domain.model.Account fromEntityToModel(AccountEntity AccountEntity);
+    co.com.neoris.accounts.domain.model.Account fromEntityToModel(AccountEntity accountEntity);
 
     AccountEntity fromModelToEntity(co.com.neoris.accounts.domain.model.Account account);
 

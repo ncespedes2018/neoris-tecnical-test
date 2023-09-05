@@ -4,14 +4,6 @@
 /*  DBMS       : PostgreSQL 						*/
 /* ---------------------------------------------------- */
 
-/* Drop Sequences for Autonumber Columns */
-
-DROP SEQUENCE IF EXISTS person_id_seq
-;
-
-DROP SEQUENCE IF EXISTS client_id_seq
-;
-
 /* Drop Tables */
 
 DROP TABLE IF EXISTS ACCOUNT CASCADE
@@ -24,10 +16,10 @@ DROP TABLE IF EXISTS TRANSACTION CASCADE
 /* Create Tables */
 CREATE TABLE ACCOUNT
 (
-	ID bigint NOT NULL,
+    ID SERIAL,
     client_id_number varchar(50) NULL,
-    password varchar(1) NULL,
-    account_number varchar(1) NULL,
+    password varchar(10) NULL,
+    account_number varchar(20) NULL,
     account_type varchar(20) NULL,
     initial_balance double precision NULL,
     status bool NOT NULL,
@@ -38,7 +30,8 @@ CREATE TABLE ACCOUNT
 
 CREATE TABLE TRANSACTION
 (
-    ID bigint NOT NULL,
+    ID SERIAL,
+    client_id_number varchar(50) NULL,
     transaction_date timestamp without time zone NOT NULL,
     transaction_type varchar(20) NULL,
     value double precision NULL,
@@ -69,13 +62,6 @@ ALTER TABLE TRANSACTION ADD CONSTRAINT FK_TRANSACTION_ID
 	FOREIGN KEY (account_Id) REFERENCES ACCOUNT (ID)
 ;
 
-
-/* Create Table Comments, Sequences for Autonumber Columns */
-
-CREATE SEQUENCE account_id_seq INCREMENT 1 START 1
-;
-CREATE SEQUENCE transaction_id_seq INCREMENT 1 START 1
-;
 
 COMMENT ON TABLE TRANSACTION
 	IS 'TRANSACTION Table id and password must not be null'

@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "0f8ab0de-0373-4472-9e6c-5c6bba9b2d09",
+		"name": "NeorisPruebaTecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4731360"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "findClientByIdNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-manager-url}}/clients/id-number/197358",
+							"host": [
+								"{{user-manager-url}}"
+							],
+							"path": [
+								"clients",
+								"id-number",
+								"197358"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findClientByFullName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-manager-url}}/clients/full-name/Michell%20Cespedes",
+							"host": [
+								"{{user-manager-url}}"
+							],
+							"path": [
+								"clients",
+								"full-name",
+								"Michell%20Cespedes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findClientById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-manager-url}}/clients/id/1",
+							"host": [
+								"{{user-manager-url}}"
+							],
+							"path": [
+								"clients",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Antonio Ramirez\",\r\n    \"gender\": \"M\",\r\n    \"age\": 38,\r\n    \"idNumber\": \"16743945\",\r\n    \"address\": \"General Ricardos, 16\",\r\n    \"phone\": \"604987451\",\r\n    \"password\": \"12345\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-manager-url}}/clients/",
+							"host": [
+								"{{user-manager-url}}"
+							],
+							"path": [
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Antonio Ramirez\",\r\n    \"gender\": \"M\",\r\n    \"age\": 38,\r\n    \"idNumber\": \"16743945\",\r\n    \"address\": \"General Ricardos, 25\",\r\n    \"phone\": \"604987451\",\r\n    \"password\": \"12345\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-manager-url}}/clients/id-number/16743945",
+							"host": [
+								"{{user-manager-url}}"
+							],
+							"path": [
+								"clients",
+								"id-number",
+								"16743945"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "findAccountByNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{account-manager-url}}/accounts/account-number/2",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"accounts",
+								"account-number",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAccountByClientIdNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{account-manager-url}}/accounts/client-id-number/197358",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"accounts",
+								"client-id-number",
+								"197358"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAccountById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{account-manager-url}}/accounts/id/1",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"accounts",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientIdNumber\": \"1973758\",\r\n    \"password\": \"1\",\r\n    \"accountNumber\": \"9\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": -35412.0,\r\n    \"status\": true,\r\n    \"audCreatedAt\": \"2023-09-06T01:04:55Z\",\r\n    \"audUpdatedAt\": \"2023-09-06T01:05:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{account-manager-url}}/accounts/",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientIdNumber\": \"1973758\",\r\n    \"password\": \"1\",\r\n    \"accountNumber\": \"9\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": -35412.0,\r\n    \"status\": true,\r\n    \"audCreatedAt\": \"2023-09-06T01:04:55Z\",\r\n    \"audUpdatedAt\": \"2023-09-06T01:05:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{account-manager-url}}/accounts/account-number/5",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"accounts",
+								"account-number",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "findTransByAccountNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{account-manager-url}}/transactions/account-number/2",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"transactions",
+								"account-number",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTransByClientIdNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{account-manager-url}}/transactions/client-id-number/197358",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"transactions",
+								"client-id-number",
+								"197358"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTransById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{account-manager-url}}/transactions/id/1",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"transactions",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTrans",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientIdNumber\": \"1973758\",\r\n    \"password\": \"1\",\r\n    \"accountNumber\": \"9\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": -35412.0,\r\n    \"status\": true,\r\n    \"audCreatedAt\": \"2023-09-06T01:04:55Z\",\r\n    \"audUpdatedAt\": \"2023-09-06T01:05:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{account-manager-url}}/transactions/",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"transactions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTrans",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientIdNumber\": \"1973758\",\r\n    \"password\": \"1\",\r\n    \"accountNumber\": \"9\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": -35412.0,\r\n    \"status\": true,\r\n    \"audCreatedAt\": \"2023-09-06T01:04:55Z\",\r\n    \"audUpdatedAt\": \"2023-09-06T01:05:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{account-manager-url}}/transactions/id/5",
+							"host": [
+								"{{account-manager-url}}"
+							],
+							"path": [
+								"transactions",
+								"id",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

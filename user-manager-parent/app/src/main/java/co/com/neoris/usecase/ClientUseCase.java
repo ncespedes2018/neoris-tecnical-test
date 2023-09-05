@@ -7,6 +7,8 @@ import co.com.neoris.users.domain.model.Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.OffsetDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class ClientUseCase {
@@ -36,7 +38,7 @@ public class ClientUseCase {
     }
 
     public void updateClient(Client client, String idNumber) throws UserNotFoundException {
-        if(clientGateway.existsClientByIdNumber(idNumber)){
+        if(!clientGateway.existsClientByIdNumber(idNumber)){
             throw new UserNotFoundException();
         }
         clientGateway.update(client, idNumber);

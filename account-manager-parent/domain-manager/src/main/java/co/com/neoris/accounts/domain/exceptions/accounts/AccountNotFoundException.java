@@ -5,6 +5,6 @@ import org.springframework.http.HttpStatus;
 
 public class AccountNotFoundException extends GenericException {
     public AccountNotFoundException() {
-        super("ER-006","Account does not exist", HttpStatus.CONFLICT);
+        super("ACCOUNT_ER_001","Account does not exist", HttpStatus.CONFLICT);
     }
 }

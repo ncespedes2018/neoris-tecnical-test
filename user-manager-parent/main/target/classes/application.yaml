@@ -1,6 +1,6 @@
 ##Spring Configuration
 server:
-  port: 8122
+  port: 8125
   servlet:
     context-path: /
 spring:

@@ -48,9 +48,9 @@ public class AccountController {
                 .build();
     }
 
-    @PutMapping("/id-number/{idNumber}")
+    @PutMapping("/account-number/{accountNumber}")
     public ResponseEntity<?> updateAccount(@RequestBody Account account,
-                                          @PathVariable String accountNumber)
+                                           @PathVariable String accountNumber)
                                                 throws AccountNotFoundException, ClientNotFoundException {
         useCase.updateAccount(account, accountNumber);
         return ResponseEntity

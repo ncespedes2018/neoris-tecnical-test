@@ -5,6 +5,6 @@ import org.springframework.http.HttpStatus;
 
 public class UserNotFoundException extends GenericException {
     public UserNotFoundException() {
-        super("ER-006","User does not exist", HttpStatus.CONFLICT);
+        super("USER_ER_002","User does not exist", HttpStatus.CONFLICT);
     }
 }

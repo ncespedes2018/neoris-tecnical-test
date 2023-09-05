@@ -10,7 +10,6 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 public class Account {
-    private Long id;
 
     private String clientIdNumber;
 

@@ -1,2 +1,3 @@
 co\com\neoris\exceptions\GlobalExceptionHandler.class
 co\com\neoris\api\ClientController.class
+co\com\neoris\exceptions\ExceptionResponseBuilder.class

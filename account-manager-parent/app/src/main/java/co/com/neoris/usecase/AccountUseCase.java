@@ -10,6 +10,8 @@ import co.com.neoris.accounts.domain.model.Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AccountUseCase {
@@ -18,7 +20,7 @@ public class AccountUseCase {
     private final IClientGateway clientGateway;
 
 
-    public Account getAccountsByClientIdNumber(String clientIdNumber) throws AccountNotFoundException {
+    public List<Account> getAccountsByClientIdNumber(String clientIdNumber) throws AccountNotFoundException {
         return accountGateway.findAccountByClientIdNumber(clientIdNumber);
     }
 
@@ -34,7 +36,7 @@ public class AccountUseCase {
 
     public void creatAccount(Account account)
             throws AccountAlreadyExistException, ClientNotFoundException {
-        if(accountGateway.existsAccountByClientIdNumber(account.getClientIdNumber())){
+        if(accountGateway.existsAccountByAccountNumber(account.getAccountNumber())){
             throw new AccountAlreadyExistException();
         }
         clientGateway.findClientByIdNumber(account.getClientIdNumber());

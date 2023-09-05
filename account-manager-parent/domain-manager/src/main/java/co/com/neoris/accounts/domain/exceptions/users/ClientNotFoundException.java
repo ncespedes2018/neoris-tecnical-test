@@ -5,6 +5,6 @@ import org.springframework.http.HttpStatus;
 
 public class ClientNotFoundException extends GenericException {
     public ClientNotFoundException() {
-        super("ER-006","Account does not exist", HttpStatus.CONFLICT);
+        super("CLIENT_ER_001","Client does not exist", HttpStatus.CONFLICT);
     }
 }

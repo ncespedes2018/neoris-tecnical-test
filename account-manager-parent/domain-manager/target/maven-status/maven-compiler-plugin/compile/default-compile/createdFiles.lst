@@ -6,10 +6,15 @@ co\com\neoris\accounts\domain\model\Client.class
 co\com\neoris\accounts\domain\model\generic\Pagination.class
 co\com\neoris\accounts\domain\model\generic\ErrorResponse$ErrorResponseBuilder.class
 co\com\neoris\accounts\domain\model\Account.class
+co\com\neoris\accounts\domain\exceptions\transactions\TransactionNotFoundException.class
 co\com\neoris\accounts\domain\exceptions\accounts\AccountNotFoundException.class
 co\com\neoris\accounts\domain\model\generic\ErrorResponse.class
+co\com\neoris\accounts\domain\model\Transaction$TransactionBuilder.class
 co\com\neoris\accounts\domain\exceptions\generic\GenericException.class
 co\com\neoris\accounts\domain\gateway\IClientGateway.class
+co\com\neoris\accounts\domain\model\Transaction.class
+co\com\neoris\accounts\domain\gateway\ITransactionGateway.class
+co\com\neoris\accounts\domain\exceptions\users\ClientNotFoundException.class
 co\com\neoris\accounts\domain\model\generic\GenericResponse$GenericResponseBuilder.class
 co\com\neoris\accounts\domain\model\generic\Pagination$PaginationBuilder.class
 co\com\neoris\accounts\domain\model\generic\GenericResponse.class

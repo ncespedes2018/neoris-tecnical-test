@@ -3,9 +3,11 @@ package co.com.neoris.accounts.domain.gateway;
 import co.com.neoris.accounts.domain.exceptions.accounts.AccountNotFoundException;
 import co.com.neoris.accounts.domain.model.Account;
 
+import java.util.List;
+
 public interface IAccountGateway {
 
-    Account findAccountByClientIdNumber(String idNumber) throws AccountNotFoundException;
+    List<Account> findAccountByClientIdNumber(String idNumber) throws AccountNotFoundException;
 
     Account findAccountByAccountNumber(String fullName) throws AccountNotFoundException;
 

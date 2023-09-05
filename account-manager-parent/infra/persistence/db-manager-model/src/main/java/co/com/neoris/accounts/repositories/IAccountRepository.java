@@ -4,11 +4,13 @@ import co.com.neoris.accounts.entities.AccountEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface IAccountRepository extends JpaRepository<AccountEntity, Long>, JpaSpecificationExecutor<AccountEntity> {
-    Optional<AccountEntity> findAccountEntityByClientIdNumber(String clientIdNumber);
+    List<AccountEntity> findAccountEntitiesByClientIdNumber(String clientIdNumber);
 
     Optional<AccountEntity> findAccountEntityByAccountNumber(String accountNumber);
 

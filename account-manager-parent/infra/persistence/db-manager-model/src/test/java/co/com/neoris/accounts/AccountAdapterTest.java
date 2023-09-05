@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.List;
+
 
 @SpringBootTest(classes = TestConfig.class)
 @ActiveProfiles("test")
@@ -37,9 +39,9 @@ class AccountAdapterTest {
     public void getAccountByClientIdNumberTest() throws AccountNotFoundException {
         Account account = getAccountEntityToTest();
         gateway.create(account);
-        Account accountReturned = gateway.findAccountByClientIdNumber(account.getClientIdNumber());
+        List<Account> accountReturned = gateway.findAccountByClientIdNumber(account.getClientIdNumber());
         Assertions.assertNotNull(accountReturned);
-        Assertions.assertEquals(accountReturned.getClientIdNumber(),account.getClientIdNumber());
+        Assertions.assertEquals(accountReturned.size(),1);
         gateway.deleteAll();
     }
 
@@ -59,11 +61,11 @@ class AccountAdapterTest {
         Account account = getAccountEntityToTest();
         gateway.create(account);
         Assertions.assertTrue(gateway.existsAccountByAccountNumber(account.getAccountNumber()));
+        gateway.deleteAll();
     }
 
     private Account getAccountEntityToTest(){
         Account account = new Account();
-        account.setId(1L);
         account.setClientIdNumber("1973546");
         account.setAccountNumber("9425464");
         account.setAccountType("Ahorros");

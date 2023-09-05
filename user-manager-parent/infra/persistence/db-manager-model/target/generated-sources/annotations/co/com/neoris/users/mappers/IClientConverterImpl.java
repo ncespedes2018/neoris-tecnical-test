@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-05T06:48:55+0200",
+    date = "2023-09-06T00:27:05+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.7 (Oracle Corporation)"
 )
 @Component
@@ -90,21 +90,17 @@ public class IClientConverterImpl implements IClientConverter {
             return null;
         }
 
-        if ( entity.getPerson() == null ) {
-            entity.setPerson( new PersonEntity() );
-        }
-        clientToPersonEntity1( client, entity.getPerson() );
         if ( client.getPassword() != null ) {
             entity.setPassword( client.getPassword() );
+        }
+        else {
+            entity.setPassword( null );
         }
         if ( client.getStatus() != null ) {
             entity.setStatus( client.getStatus() );
         }
-        if ( client.getId() != null ) {
-            entity.setId( client.getId() );
-        }
         else {
-            entity.setId( null );
+            entity.setStatus( null );
         }
 
         return entity;
@@ -227,30 +223,5 @@ public class IClientConverterImpl implements IClientConverter {
         }
 
         return personEntity.build();
-    }
-
-    protected void clientToPersonEntity1(Client client, PersonEntity mappingTarget) {
-        if ( client == null ) {
-            return;
-        }
-
-        if ( client.getFullName() != null ) {
-            mappingTarget.setFullName( client.getFullName() );
-        }
-        if ( client.getGender() != null ) {
-            mappingTarget.setGender( client.getGender() );
-        }
-        if ( client.getAge() != null ) {
-            mappingTarget.setAge( client.getAge() );
-        }
-        if ( client.getIdNumber() != null ) {
-            mappingTarget.setIdNumber( client.getIdNumber() );
-        }
-        if ( client.getAddress() != null ) {
-            mappingTarget.setAddress( client.getAddress() );
-        }
-        if ( client.getPhone() != null ) {
-            mappingTarget.setPhone( client.getPhone() );
-        }
     }
 }

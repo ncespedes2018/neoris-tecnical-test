@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 public class AccountAlreadyExistException extends GenericException {
 
     public AccountAlreadyExistException() {
-        super("ER-001","Username already exist", HttpStatus.CONFLICT);
+        super("ACCOUNT_ER_001","Account already exist", HttpStatus.CONFLICT);
     }
 
 }
