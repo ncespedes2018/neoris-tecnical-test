@@ -1,0 +1,8 @@
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\model\generic\ErrorResponse.java
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\model\Account.java
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\model\generic\GenericResponse.java
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\exceptions\accounts\AccountAlreadyExistException.java
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\model\generic\Pagination.java
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\exceptions\generic\GenericException.java
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\exceptions\accounts\AccountNotFoundException.java
+D:\NEORIS\Prueba-Tecnica\account-manager-parent\domain-manager\src\main\java\co\com\neoris\accounts\domain\gateway\IAccountGateway.java

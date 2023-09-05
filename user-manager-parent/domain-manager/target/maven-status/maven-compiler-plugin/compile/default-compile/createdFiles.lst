@@ -1,0 +1,12 @@
+co\com\neoris\users\domain\model\Client.class
+co\com\neoris\users\domain\model\generic\ErrorResponse$ErrorResponseBuilder.class
+co\com\neoris\users\domain\model\generic\GenericResponse$GenericResponseBuilder.class
+co\com\neoris\users\domain\model\generic\Pagination$PaginationBuilder.class
+co\com\neoris\users\domain\exceptions\users\UserAlreadyExistException.class
+co\com\neoris\users\domain\gateway\IClientGateway.class
+co\com\neoris\users\domain\model\Client$ClientBuilder.class
+co\com\neoris\users\domain\exceptions\users\UserNotFoundException.class
+co\com\neoris\users\domain\model\generic\GenericResponse.class
+co\com\neoris\users\domain\exceptions\generic\GenericException.class
+co\com\neoris\users\domain\model\generic\ErrorResponse.class
+co\com\neoris\users\domain\model\generic\Pagination.class

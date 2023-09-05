@@ -1,0 +1,5 @@
+# Created at 2023-09-05T05:36:22.332
+Boot Manifest-JAR contains absolute paths in classpath 'D:\NEORIS\Prueba-Tecnica\account-manager-parent\infra\persistence\db-manager-model\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

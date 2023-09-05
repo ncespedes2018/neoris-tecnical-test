@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="app" />
+        <module name="db-manager-model" />
+        <module name="main" />
+        <module name="domain-manager" />
+        <module name="api-rest" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="db-manager-datamodel" target="17" />
+      <module name="db-manager-strategy" target="17" />
+      <module name="user-manager-infra" target="17" />
+      <module name="user-manager-parent" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-rest" options="-parameters" />
+      <module name="app" options="-parameters" />
+      <module name="db-manager-model" options="-parameters" />
+      <module name="db-manager-strategy" options="-parameters" />
+      <module name="domain-manager" options="-parameters" />
+      <module name="main" options="-parameters" />
+      <module name="user-manager-infra" options="" />
+    </option>
+  </component>
+</project>

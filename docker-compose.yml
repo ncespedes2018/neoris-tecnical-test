@@ -1,0 +1,94 @@
+version: '3.7'
+
+services:
+  usersdb:
+    image: postgres
+    restart: always
+    hostname: usersdb
+    container_name: usersdb
+    ports:
+      - "5432:5432"
+    user: postgres
+    volumes:
+      - ./Users.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    networks:
+      - main
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U postgres -d postgres'"]
+      interval: 10s
+      timeout: 20s
+      retries: 5
+      start_period: 40s
+      start_interval: 5s
+
+  accountsdb:
+    image: postgres
+    restart: always
+    hostname: accountsdb
+    container_name: accountsdb
+    ports:
+      - "5433:5432"
+    user: postgres
+    volumes:
+      - ./Accounts.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    networks:
+      - main
+    healthcheck:
+      test: [ "CMD-SHELL", "sh -c 'pg_isready -U postgres -d postgres'" ]
+      interval: 10s
+      timeout: 20s
+      retries: 5
+      start_period: 40s
+      start_interval: 5s
+
+  users-manager:
+    build:
+      context: .
+      dockerfile: user-manager-parent\Dockerfile
+    ports:
+      - "8122:8122"
+    networks:
+      - main
+    environment:
+      DB_HOST: usersdb
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+    depends_on:
+      usersdb:
+        condition: service_healthy
+        required: true
+        restart: true
+
+  accounts-manager:
+    build:
+      context: .
+      dockerfile: account-manager-parent\Dockerfile
+    ports:
+      - "8123:8122"
+    networks:
+      - main
+    environment:
+      DB_HOST: accountsdb
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+    depends_on:
+      usersdb:
+        condition: service_healthy
+        required: true
+        restart: true
+
+networks:
+  main:
+    driver: bridge
