@@ -11,6 +11,7 @@
         <module name="db-manager-model" />
         <module name="main" />
         <module name="domain-manager" />
+        <module name="providers" />
         <module name="api-rest" />
       </profile>
     </annotationProcessing>
@@ -29,6 +30,7 @@
       <module name="db-manager-strategy" options="-parameters" />
       <module name="domain-manager" options="-parameters" />
       <module name="main" options="-parameters" />
+      <module name="providers" options="-parameters" />
       <module name="user-manager-infra" options="" />
     </option>
   </component>

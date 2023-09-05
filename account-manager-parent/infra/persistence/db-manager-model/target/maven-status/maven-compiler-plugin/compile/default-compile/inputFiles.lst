@@ -1,5 +1,5 @@
-D:\NEORIS\Prueba-Tecnica\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\entities\AccountEntity.java
-D:\NEORIS\Prueba-Tecnica\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\mappers\IAccountConverter.java
-D:\NEORIS\Prueba-Tecnica\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\entities\TransactionEntity.java
-D:\NEORIS\Prueba-Tecnica\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\adapters\AccountAdapter.java
-D:\NEORIS\Prueba-Tecnica\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\repositories\IAccountRepository.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\repositories\IAccountRepository.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\adapters\AccountAdapter.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\entities\TransactionEntity.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\mappers\IAccountConverter.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\accounts\entities\AccountEntity.java

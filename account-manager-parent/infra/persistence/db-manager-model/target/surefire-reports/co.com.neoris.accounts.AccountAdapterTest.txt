@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: co.com.neoris.accounts.AccountAdapterTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.243 s - in co.com.neoris.accounts.AccountAdapterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.098 s - in co.com.neoris.accounts.AccountAdapterTest

@@ -1,6 +1,7 @@
 package co.com.neoris.api;
 
 
+import co.com.neoris.accounts.domain.exceptions.users.ClientNotFoundException;
 import co.com.neoris.usecase.AccountUseCase;
 import co.com.neoris.accounts.domain.exceptions.accounts.AccountAlreadyExistException;
 import co.com.neoris.accounts.domain.exceptions.accounts.AccountNotFoundException;
@@ -39,7 +40,8 @@ public class AccountController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> createAccount(@RequestBody Account account) throws AccountAlreadyExistException {
+    public ResponseEntity<?> createAccount(@RequestBody Account account) throws AccountAlreadyExistException,
+            ClientNotFoundException {
         useCase.creatAccount(account);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -48,7 +50,8 @@ public class AccountController {
 
     @PutMapping("/id-number/{idNumber}")
     public ResponseEntity<?> updateAccount(@RequestBody Account account,
-                                          @PathVariable String accountNumber) throws AccountNotFoundException {
+                                          @PathVariable String accountNumber)
+                                                throws AccountNotFoundException, ClientNotFoundException {
         useCase.updateAccount(account, accountNumber);
         return ResponseEntity
                 .status(HttpStatus.NO_CONTENT)

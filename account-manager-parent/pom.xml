@@ -23,6 +23,7 @@
     <modules>
        <module>infra/persistence/db-manager-model</module>
         <module>infra/delivery/api-rest</module>
+        <module>infra/providers</module>
         <module>app</module>
         <module>domain-manager</module>
         <module>main</module>

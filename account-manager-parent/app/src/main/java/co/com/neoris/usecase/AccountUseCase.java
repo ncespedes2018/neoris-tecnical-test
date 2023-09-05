@@ -2,8 +2,11 @@ package co.com.neoris.usecase;
 
 import co.com.neoris.accounts.domain.exceptions.accounts.AccountAlreadyExistException;
 import co.com.neoris.accounts.domain.exceptions.accounts.AccountNotFoundException;
+import co.com.neoris.accounts.domain.exceptions.users.ClientNotFoundException;
 import co.com.neoris.accounts.domain.gateway.IAccountGateway;
+import co.com.neoris.accounts.domain.gateway.IClientGateway;
 import co.com.neoris.accounts.domain.model.Account;
+import co.com.neoris.accounts.domain.model.Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class AccountUseCase {
 
     private final IAccountGateway accountGateway;
+    private final IClientGateway clientGateway;
 
 
     public Account getAccountsByClientIdNumber(String clientIdNumber) throws AccountNotFoundException {
@@ -28,16 +32,22 @@ public class AccountUseCase {
 
     }
 
-    public void creatAccount(Account account) throws AccountAlreadyExistException {
+    public void creatAccount(Account account)
+            throws AccountAlreadyExistException, ClientNotFoundException {
         if(accountGateway.existsAccountByClientIdNumber(account.getClientIdNumber())){
             throw new AccountAlreadyExistException();
         }
+        clientGateway.findClientByIdNumber(account.getClientIdNumber());
         accountGateway.create(account);
     }
 
-    public void updateAccount(Account account, String accountNumber) throws AccountNotFoundException {
+    public void updateAccount(Account account, String accountNumber)
+            throws AccountNotFoundException, ClientNotFoundException {
         if(accountGateway.existsAccountByAccountNumber(accountNumber)){
             throw new AccountNotFoundException();
+        }
+        if (account.getClientIdNumber() != null && !account.getClientIdNumber().isEmpty()){
+            clientGateway.findClientByIdNumber(account.getClientIdNumber());
         }
         accountGateway.update(account, accountNumber);
     }
