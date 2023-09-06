@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -55,11 +56,13 @@ public class TransactionAdapter implements ITransactionGateway {
     }
 
     @Override
-    public Transaction findTransactionByTransactiomDateMax() {
-        TransactionEntity transactionEntity = repository
-                .findByTransactionDateMax();
+    public Transaction findTransactionByTransactiomDateMax(String accountNumber) throws TransactionNotFoundException {
+        List<TransactionEntity> transactionEntity = repository
+                .findTransactionEntitiesByAccount_AccountNumber(accountNumber);
 
-        return converter.fromEntityToModel(transactionEntity);
+        return converter.fromEntityToModel(transactionEntity.stream()
+                .max(Comparator.comparing(TransactionEntity::getTransactionDate)).
+                orElseThrow(() -> new TransactionNotFoundException()));
     }
 
     @Override

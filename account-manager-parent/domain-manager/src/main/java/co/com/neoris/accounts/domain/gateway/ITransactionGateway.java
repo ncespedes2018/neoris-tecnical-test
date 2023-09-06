@@ -10,7 +10,7 @@ public interface ITransactionGateway {
 
     List<Transaction> findTransactionByAccountNumber(String accountNumber);
 
-    Transaction findTransactionByTransactiomDateMax();
+    Transaction findTransactionByTransactiomDateMax(String accountNumber) throws TransactionNotFoundException;
 
     Transaction findTransactionById(Long id) throws TransactionNotFoundException;
 

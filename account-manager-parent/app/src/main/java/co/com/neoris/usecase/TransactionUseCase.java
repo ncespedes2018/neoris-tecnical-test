@@ -37,7 +37,7 @@ public class TransactionUseCase {
 
     }
 
-    public void createTransaction(Transaction transaction) throws ClientNotFoundException, AccountNotFoundException {
+    public void createTransaction(Transaction transaction) throws ClientNotFoundException, AccountNotFoundException, TransactionNotFoundException {
         clientGateway.findClientByIdNumber(transaction.getClientIdNumber());
         List<Transaction> transactions = transactionGateway
                 .findTransactionByAccountNumber(transaction.getAccountNumber());
@@ -48,7 +48,8 @@ public class TransactionUseCase {
             Account entity = accountGateway.findAccountByAccountNumber(transaction.getAccountNumber());
             actualBalance = entity.getInitialBalance();
         }else {
-            Transaction transaction1 = transactionGateway.findTransactionByTransactiomDateMax();
+            Transaction transaction1 = transactionGateway
+                    .findTransactionByTransactiomDateMax(transaction.getAccountNumber());
             actualBalance = transaction1.getBalance();
         }
         if(transaction.getTransactionType().equals(TranactionTypeEnum.CREDITO)) {

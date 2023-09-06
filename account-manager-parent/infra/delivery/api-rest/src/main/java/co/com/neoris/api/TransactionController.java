@@ -1,6 +1,7 @@
 package co.com.neoris.api;
 
 
+import co.com.neoris.accounts.domain.exceptions.accounts.AccountNotFoundException;
 import co.com.neoris.accounts.domain.exceptions.transactions.TransactionNotFoundException;
 import co.com.neoris.accounts.domain.exceptions.users.ClientNotFoundException;
 import co.com.neoris.accounts.domain.model.Transaction;
@@ -39,7 +40,8 @@ public class TransactionController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> createAccount(@RequestBody Transaction transaction) throws ClientNotFoundException {
+    public ResponseEntity<?> createAccount(@RequestBody Transaction transaction)
+            throws ClientNotFoundException, AccountNotFoundException, TransactionNotFoundException {
         useCase.createTransaction(transaction);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
