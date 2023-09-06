@@ -1,1 +1,2 @@
-/account-manager-parent/*/target
+/account-manager-parent/**/target
+/user-manager-parent/**/target
