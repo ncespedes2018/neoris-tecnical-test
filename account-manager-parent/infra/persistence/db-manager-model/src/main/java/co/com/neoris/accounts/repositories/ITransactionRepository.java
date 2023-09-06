@@ -15,4 +15,6 @@ public interface ITransactionRepository extends JpaRepository<TransactionEntity,
 
     List<TransactionEntity> findTransactionEntitiesByAccount_AccountNumber(String accountNumber);
 
+    TransactionEntity findByTransactionDateMax();
+
 }

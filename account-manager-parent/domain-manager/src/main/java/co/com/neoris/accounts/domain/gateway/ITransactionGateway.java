@@ -8,7 +8,9 @@ import java.util.List;
 public interface ITransactionGateway {
     List<Transaction> findTransactionByClientIdNumber(String clientNumber);
 
-    List<Transaction> findTransactionByTransactionNumber(String accountNumber);
+    List<Transaction> findTransactionByAccountNumber(String accountNumber);
+
+    Transaction findTransactionByTransactiomDateMax();
 
     Transaction findTransactionById(Long id) throws TransactionNotFoundException;
 

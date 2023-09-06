@@ -1,6 +1,7 @@
 package co.com.neoris.accounts.entities;
 
 
+import co.com.neoris.accounts.domain.TranactionTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,8 +31,8 @@ public class TransactionEntity {
     @Column(name = "client_id_number")
     private String clientIdNumber;
 
-    @Column(name = "transaction_type")
-    private String transactionType;
+    @Enumerated(EnumType.STRING)
+    private TranactionTypeEnum transactionType;
 
     @Column(name = "value")
     private Double value;

@@ -40,7 +40,7 @@ public class TransactionAdapter implements ITransactionGateway {
     }
 
     @Override
-    public List<Transaction> findTransactionByTransactionNumber(String accountNumber) {
+    public List<Transaction> findTransactionByAccountNumber(String accountNumber) {
         List<TransactionEntity> transactionEntities = repository
                 .findTransactionEntitiesByAccount_AccountNumber(accountNumber);
         List<Transaction> transactions = new ArrayList<>();
@@ -52,6 +52,14 @@ public class TransactionAdapter implements ITransactionGateway {
             transactions.add(converter.fromEntityToModel(transactionEntity));
         }
         return transactions;
+    }
+
+    @Override
+    public Transaction findTransactionByTransactiomDateMax() {
+        TransactionEntity transactionEntity = repository
+                .findByTransactionDateMax();
+
+        return converter.fromEntityToModel(transactionEntity);
     }
 
     @Override

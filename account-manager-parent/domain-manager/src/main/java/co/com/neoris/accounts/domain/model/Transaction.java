@@ -1,5 +1,6 @@
 package co.com.neoris.accounts.domain.model;
 
+import co.com.neoris.accounts.domain.TranactionTypeEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,7 +17,7 @@ public class Transaction {
 
     private OffsetDateTime transactionDate;
 
-    private String transactionType;
+    private TranactionTypeEnum transactionType;
 
     private Double value;
 

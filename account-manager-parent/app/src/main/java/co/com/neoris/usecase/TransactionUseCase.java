@@ -1,10 +1,15 @@
 package co.com.neoris.usecase;
 
+import co.com.neoris.accounts.domain.TranactionTypeEnum;
+import co.com.neoris.accounts.domain.exceptions.accounts.AccountNotFoundException;
 import co.com.neoris.accounts.domain.exceptions.transactions.TransactionNotFoundException;
 import co.com.neoris.accounts.domain.exceptions.users.ClientNotFoundException;
+import co.com.neoris.accounts.domain.gateway.IAccountGateway;
 import co.com.neoris.accounts.domain.gateway.IClientGateway;
 import co.com.neoris.accounts.domain.gateway.ITransactionGateway;
+import co.com.neoris.accounts.domain.model.Account;
 import co.com.neoris.accounts.domain.model.Transaction;
+import co.com.neoris.accounts.entities.AccountEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,14 +21,14 @@ public class TransactionUseCase {
 
     private final ITransactionGateway transactionGateway;
     private final IClientGateway clientGateway;
-
+    private final IAccountGateway accountGateway;
 
     public List<Transaction> getTransactionsByClientId(String clientIdNumber) throws TransactionNotFoundException {
         return transactionGateway.findTransactionByClientIdNumber(clientIdNumber);
     }
 
     public List<Transaction> getTransactionsByAccountNumber(String accountNumber) throws TransactionNotFoundException {
-        return transactionGateway.findTransactionByTransactionNumber(accountNumber);
+        return transactionGateway.findTransactionByAccountNumber(accountNumber);
 
     }
 
@@ -32,8 +37,24 @@ public class TransactionUseCase {
 
     }
 
-    public void createTransaction(Transaction transaction) throws ClientNotFoundException {
+    public void createTransaction(Transaction transaction) throws ClientNotFoundException, AccountNotFoundException {
         clientGateway.findClientByIdNumber(transaction.getClientIdNumber());
+        List<Transaction> transactions = transactionGateway
+                .findTransactionByAccountNumber(transaction.getAccountNumber());
+
+        Double actualBalance=0.0;
+
+        if(transactions.size() >0){
+            Account entity = accountGateway.findAccountByAccountNumber(transaction.getAccountNumber());
+            actualBalance = entity.getInitialBalance();
+        }else {
+            Transaction transaction1 = transactionGateway.findTransactionByTransactiomDateMax();
+            actualBalance = transaction1.getBalance();
+        }
+        if(transaction.getTransactionType().equals(TranactionTypeEnum.CREDITO)) {
+            transaction.setValue(transaction.getValue()+-1);
+        }
+        transaction.setBalance(actualBalance + transaction.getValue());
         transactionGateway.create(transaction);
     }
 

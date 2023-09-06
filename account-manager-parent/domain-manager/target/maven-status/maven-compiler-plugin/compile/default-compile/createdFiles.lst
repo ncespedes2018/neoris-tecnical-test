@@ -6,6 +6,7 @@ co\com\neoris\accounts\domain\model\Client.class
 co\com\neoris\accounts\domain\model\generic\Pagination.class
 co\com\neoris\accounts\domain\model\generic\ErrorResponse$ErrorResponseBuilder.class
 co\com\neoris\accounts\domain\model\Account.class
+co\com\neoris\accounts\domain\TranactionTypeEnum.class
 co\com\neoris\accounts\domain\exceptions\transactions\TransactionNotFoundException.class
 co\com\neoris\accounts\domain\exceptions\accounts\AccountNotFoundException.class
 co\com\neoris\accounts\domain\model\generic\ErrorResponse.class
