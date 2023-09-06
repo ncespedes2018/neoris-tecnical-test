@@ -1,4 +1,4 @@
-D:\NEORIS\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\mappers\IClientConverter.java
-D:\NEORIS\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\adapters\ClientAdapter.java
-D:\NEORIS\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\dto\ClientDto.java
-D:\NEORIS\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\client\ClientFeignClient.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\dto\ClientDto.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\client\ClientFeignClient.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\adapters\ClientAdapter.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\account-manager-parent\infra\providers\src\main\java\co\com\neoris\feignclient\internal\mappers\IClientConverter.java

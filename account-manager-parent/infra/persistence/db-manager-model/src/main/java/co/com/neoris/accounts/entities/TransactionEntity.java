@@ -16,7 +16,7 @@ import java.time.OffsetDateTime;
 @Entity
 @Data
 @Builder
-@Table(name = "transactions")
+@Table(name = "transaction")
 public class TransactionEntity {
     @Id
     @Column(name = "id",unique = true)
@@ -46,6 +46,6 @@ public class TransactionEntity {
     private OffsetDateTime audUpdatedAt;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "account_Id", referencedColumnName = "id")
+    @JoinColumn(name = "account_id", referencedColumnName = "id")
     private AccountEntity account;
 }
