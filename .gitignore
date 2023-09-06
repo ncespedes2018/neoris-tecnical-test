@@ -1,2 +1,3 @@
 /account-manager-parent/**/target
 /user-manager-parent/**/target
+**/.idea
