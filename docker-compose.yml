@@ -7,7 +7,7 @@ services:
     hostname: usersdb
     container_name: usersdb
     ports:
-      - "5432:5432"
+      - "5433:5432"
     user: postgres
     volumes:
       - ./Users.sql:/docker-entrypoint-initdb.d/init.sql
@@ -31,7 +31,7 @@ services:
     hostname: accountsdb
     container_name: accountsdb
     ports:
-      - "5433:5432"
+      - "5434:5432"
     user: postgres
     volumes:
       - ./Accounts.sql:/docker-entrypoint-initdb.d/init.sql
@@ -49,12 +49,14 @@ services:
       start_period: 40s
       start_interval: 5s
 
-  users-manager:
+  usersmanager:
     build:
-      context: .
-      dockerfile: user-manager-parent\Dockerfile
+      context: user-manager-parent/
+      dockerfile: Dockerfile
+    hostname: usersmanager
+    container_name: usersmanager
     ports:
-      - "8122:8122"
+      - "8125:8125"
     networks:
       - main
     environment:
@@ -69,12 +71,14 @@ services:
         required: true
         restart: true
 
-  accounts-manager:
+  accountsmanager:
     build:
-      context: .
-      dockerfile: account-manager-parent\Dockerfile
+      context: account-manager-parent/
+      dockerfile: Dockerfile
+    hostname: accountsmanager
+    container_name: accountsmanager
     ports:
-      - "8123:8122"
+      - "8126:8126"
     networks:
       - main
     environment:
@@ -83,6 +87,7 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: postgres
+      CLIENT_URL: usersmanager:8125
     depends_on:
       accountsdb:
         condition: service_healthy

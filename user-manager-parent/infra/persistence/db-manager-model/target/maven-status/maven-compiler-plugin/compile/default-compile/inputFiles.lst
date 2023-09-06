@@ -1,6 +1,6 @@
-D:\NEORIS\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\repositories\IPersonRepository.java
-D:\NEORIS\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\adapters\ClientAdapter.java
-D:\NEORIS\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\entities\PersonEntity.java
-D:\NEORIS\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\entities\ClientEntity.java
-D:\NEORIS\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\mappers\IClientConverter.java
-D:\NEORIS\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\repositories\IClientRepository.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\adapters\ClientAdapter.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\repositories\IClientRepository.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\entities\PersonEntity.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\entities\ClientEntity.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\mappers\IClientConverter.java
+C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\infra\persistence\db-manager-model\src\main\java\co\com\neoris\users\repositories\IPersonRepository.java

@@ -1,5 +1,0 @@
-# Created at 2023-09-06T00:26:11.421
-Boot Manifest-JAR contains absolute paths in classpath 'D:\NEORIS\neoris-tecnical-test\user-manager-parent\infra\delivery\api-rest\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-

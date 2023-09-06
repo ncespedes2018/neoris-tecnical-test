@@ -39,4 +39,4 @@ spring:
 
 openfeign:
   basePath:
-    client-url: http://${CLIENT_HOST}:${CLIENT_PORT}
+    client-url: ${CLIENT_URL}
