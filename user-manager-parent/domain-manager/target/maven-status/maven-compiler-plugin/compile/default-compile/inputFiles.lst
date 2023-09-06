@@ -1,8 +1,0 @@
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\gateway\IClientGateway.java
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\exceptions\users\UserNotFoundException.java
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\exceptions\users\UserAlreadyExistException.java
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\exceptions\generic\GenericException.java
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\model\generic\GenericResponse.java
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\model\generic\ErrorResponse.java
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\model\generic\Pagination.java
-C:\Users\nfcespedes\Documents\NASJWHER\neoris-tecnical-test\user-manager-parent\domain-manager\src\main\java\co\com\neoris\users\domain\model\Client.java

@@ -1,6 +1,0 @@
-co\com\neoris\feignclient\internal\dto\ClientDto$ClientDtoBuilder.class
-co\com\neoris\feignclient\internal\mappers\IClientConverter.class
-co\com\neoris\feignclient\internal\adapters\ClientAdapter.class
-co\com\neoris\feignclient\internal\client\ClientFeignClient.class
-co\com\neoris\feignclient\internal\mappers\IClientConverterImpl.class
-co\com\neoris\feignclient\internal\dto\ClientDto.class

@@ -1,9 +1,0 @@
-co\com\neoris\users\mappers\IClientConverterImpl.class
-co\com\neoris\users\adapters\ClientAdapter.class
-co\com\neoris\users\mappers\IClientConverter.class
-co\com\neoris\users\entities\ClientEntity.class
-co\com\neoris\users\repositories\IClientRepository.class
-co\com\neoris\users\repositories\IPersonRepository.class
-co\com\neoris\users\entities\ClientEntity$ClientEntityBuilder.class
-co\com\neoris\users\entities\PersonEntity.class
-co\com\neoris\users\entities\PersonEntity$PersonEntityBuilder.class
