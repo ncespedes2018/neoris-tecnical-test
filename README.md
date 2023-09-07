@@ -27,7 +27,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes componentes:
 ### Windows
 2. Ejecutar el script run.cmd:
    ```bash
-    run.cmd
+    run.bat
 
 ### Linux
 2. Ejecutar el script run.sh:

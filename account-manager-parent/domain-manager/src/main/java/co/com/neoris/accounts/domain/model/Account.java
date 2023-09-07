@@ -11,6 +11,8 @@ import java.time.OffsetDateTime;
 @Setter
 public class Account {
 
+    private Long id;
+
     private String clientIdNumber;
 
     private String password;

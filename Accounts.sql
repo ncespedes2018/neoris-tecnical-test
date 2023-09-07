@@ -12,9 +12,6 @@ DROP TABLE IF EXISTS ACCOUNT CASCADE
 DROP TABLE IF EXISTS TRANSACTION CASCADE
 ;
 
-CREATE TYPE TRANSACTION_TYPE AS ENUM ('CREDITO', 'DEBITO');
-
-
 /* Create Tables */
 CREATE TABLE ACCOUNT
 (
@@ -35,7 +32,7 @@ CREATE TABLE TRANSACTION
     ID SERIAL,
     client_id_number varchar(50) NULL,
     transaction_date timestamp without time zone NOT NULL,
-    transaction_type TRANSACTION_TYPE NULL,
+    transaction_type varchar(20) NULL,
     value double precision NULL,
     balance double precision NULL,
     account_Id bigint NOT NULL,

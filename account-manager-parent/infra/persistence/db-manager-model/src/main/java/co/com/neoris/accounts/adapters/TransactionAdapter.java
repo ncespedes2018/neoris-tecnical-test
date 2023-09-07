@@ -2,16 +2,21 @@ package co.com.neoris.accounts.adapters;
 
 
 import co.com.neoris.accounts.domain.gateway.ITransactionGateway;
+import co.com.neoris.accounts.domain.model.Account;
 import co.com.neoris.accounts.domain.model.Transaction;
+import co.com.neoris.accounts.entities.AccountEntity;
 import co.com.neoris.accounts.entities.TransactionEntity;
+import co.com.neoris.accounts.mappers.IAccountConverter;
 import co.com.neoris.accounts.mappers.ITransactionConverter;
 import co.com.neoris.accounts.repositories.ITransactionRepository;
 import co.com.neoris.accounts.domain.exceptions.transactions.TransactionNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -24,6 +29,7 @@ public class TransactionAdapter implements ITransactionGateway {
 
     private final ITransactionRepository repository;
     private final ITransactionConverter converter;
+    private final IAccountConverter accountConverter;
 
     @Override
     public List<Transaction> findTransactionByClientIdNumber(String clientNumber) {
@@ -74,11 +80,22 @@ public class TransactionAdapter implements ITransactionGateway {
     }
 
     @Override
-    public void create(Transaction transaction) {
+    @Transactional
+    public void create(Transaction transaction, Account account) {
         logger.info("♠------- Create New List<Transaction> --------♠");
         TransactionEntity transactionEntity = converter.fromModelToEntity(transaction);
         logger.info(transactionEntity.toString());
+        OffsetDateTime now = OffsetDateTime.now();
+        AccountEntity accountEntity = accountConverter.fromModelToEntity(account);
+        transactionEntity.setAudCreatedAt(now);
+        transactionEntity.setAudUpdatedAt(now);
+        transactionEntity.setAccount(accountEntity);
         repository.save(transactionEntity);
+    }
+
+    @Override
+    public Boolean findTransactionByTransactionDate(OffsetDateTime offsetDateTime){
+        return repository.existsByTransactionDate(offsetDateTime);
     }
 
     @Override

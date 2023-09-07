@@ -46,7 +46,7 @@ public class TransactionEntity {
     @Column(name = "aud_updated_At")
     private OffsetDateTime audUpdatedAt;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private AccountEntity account;
 }

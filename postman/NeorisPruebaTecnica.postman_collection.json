@@ -132,14 +132,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{account-manager-url}}/accounts/account-number/2",
+							"raw": "{{account-manager-url}}/accounts/account-number/123123",
 							"host": [
 								"{{account-manager-url}}"
 							],
 							"path": [
 								"accounts",
 								"account-number",
-								"2"
+								"123123"
 							]
 						}
 					},
@@ -190,7 +190,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"clientIdNumber\": \"1973758\",\r\n    \"password\": \"1\",\r\n    \"accountNumber\": \"9\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": -35412.0,\r\n    \"status\": true,\r\n    \"audCreatedAt\": \"2023-09-06T01:04:55Z\",\r\n    \"audUpdatedAt\": \"2023-09-06T01:05:00Z\"\r\n}",
+							"raw": "{\r\n    \"clientIdNumber\": \"16743945\",\r\n    \"password\": \"15975324\",\r\n    \"accountNumber\": \"6541254\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": 1000000,\r\n    \"status\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -249,14 +249,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{account-manager-url}}/transactions/account-number/2",
+							"raw": "{{account-manager-url}}/transactions/account-number/6541254",
 							"host": [
 								"{{account-manager-url}}"
 							],
 							"path": [
 								"transactions",
 								"account-number",
-								"2"
+								"6541254"
 							]
 						}
 					},
@@ -268,14 +268,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{account-manager-url}}/transactions/client-id-number/197358",
+							"raw": "{{account-manager-url}}/transactions/client-id-number/16743945",
 							"host": [
 								"{{account-manager-url}}"
 							],
 							"path": [
 								"transactions",
 								"client-id-number",
-								"197358"
+								"16743945"
 							]
 						}
 					},
@@ -307,7 +307,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"clientIdNumber\": \"1973758\",\r\n    \"password\": \"1\",\r\n    \"accountNumber\": \"9\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": -35412.0,\r\n    \"status\": true,\r\n    \"audCreatedAt\": \"2023-09-06T01:04:55Z\",\r\n    \"audUpdatedAt\": \"2023-09-06T01:05:00Z\"\r\n}",
+							"raw": "{\r\n    \"transactionDate\": \"2023-08-14T22:05:45Z\",\r\n    \"transactionType\": \"CREDITO\",\r\n    \"value\":96451,\r\n    \"accountNumber\": \"6541254\",\r\n    \"clientIdNumber\": \"16743945\",\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,7 +334,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"clientIdNumber\": \"1973758\",\r\n    \"password\": \"1\",\r\n    \"accountNumber\": \"9\",\r\n    \"accountType\": \"Ahorros\",\r\n    \"initialBalance\": -35412.0,\r\n    \"status\": true,\r\n    \"audCreatedAt\": \"2023-09-06T01:04:55Z\",\r\n    \"audUpdatedAt\": \"2023-09-06T01:05:00Z\"\r\n}",
+							"raw": "{\r\n    \"transactionDate\": \"2023-08-14T21:05:45Z\",\r\n    \"transactionType\": \"CREDITO\",\r\n    \"value\":96451,\r\n    \"accountNumber\": \"6541254\",\r\n    \"clientIdNumber\": \"16743945\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -342,14 +342,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{account-manager-url}}/transactions/id/5",
+							"raw": "{{account-manager-url}}/transactions/id/12",
 							"host": [
 								"{{account-manager-url}}"
 							],
 							"path": [
 								"transactions",
 								"id",
-								"5"
+								"12"
 							]
 						}
 					},

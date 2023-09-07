@@ -2,6 +2,7 @@ package co.com.neoris.exceptions;
 
 import co.com.neoris.accounts.domain.exceptions.accounts.AccountAlreadyExistException;
 import co.com.neoris.accounts.domain.exceptions.accounts.AccountNotFoundException;
+import co.com.neoris.accounts.domain.exceptions.transactions.TransactionAlreadyExistException;
 import co.com.neoris.accounts.domain.exceptions.transactions.TransactionNotFoundException;
 import co.com.neoris.accounts.domain.exceptions.users.ClientNotFoundException;
 import org.springframework.core.Ordered;
@@ -35,6 +36,10 @@ public class GlobalExceptionHandler extends ExceptionResponseBuilder {
         return buildResponseEntity(e);
     }
 
+    @ExceptionHandler(TransactionAlreadyExistException.class)
+    public ResponseEntity<?> transactionNotFoundExceptionHandler(TransactionAlreadyExistException e){
+        return buildResponseEntity(e);
+    }
     /**
      * Users Error Handlers
      */
